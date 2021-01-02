@@ -1,5 +1,5 @@
 # Ruby Programming
-These are projects from the Ruby Programming course of [The Odin Project](https://www.theodinproject.com/courses/ruby-programming).
+Projects from the Ruby Programming course of [The Odin Project](https://www.theodinproject.com/courses/ruby-programming).
 
 ## Basic Ruby
 [Caesar Cipher](https://github.com/irahrosete/top-ruby/tree/main/caesar-cipher)<br>
