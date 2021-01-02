@@ -11,12 +11,25 @@ def caesar_cipher(string, num)
   else
     ch
   end
+
+  if ch.match?(/[a-z]/) == true
+    ch.ord + num
+    if ch.ord + num > 122
+      ch.ord + num - 26
+    else
+      ch.ord + num
+    end
+  else
+    ch
+  end
   }
   final_cipher.map(&:chr).join
 end
 
-puts caesar_cipher("HELLO WORLD!", 5)
+puts caesar_cipher("Hello World!", 5)
 puts "a".match?(/[a-zA-Z]/)
 
 # A = 65
 # Z = 90
+# a = 91
+# z = 122
