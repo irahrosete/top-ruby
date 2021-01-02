@@ -27,9 +27,6 @@ def caesar_cipher(string, num)
 end
 
 puts caesar_cipher("Hello World!", 5)
-puts "a".match?(/[a-zA-Z]/)
 
-# A = 65
-# Z = 90
-# a = 91
-# z = 122
+# A-Z = 65-90
+# a-z = 91-122
