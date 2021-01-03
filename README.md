@@ -3,7 +3,7 @@ Projects from the Ruby Programming course of [The Odin Project](https://www.theo
 
 ## Basic Ruby
 [Caesar Cipher](https://github.com/irahrosete/top-ruby/tree/main/caesar-cipher)<br>
-[Sub Strings]()<br>
+[Sub Strings](https://github.com/irahrosete/top-ruby/tree/main/sub-string)<br>
 [Stock Picker]()<br>
 [Bubble Sort]()
 
