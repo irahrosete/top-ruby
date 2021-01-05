@@ -34,19 +34,26 @@ module TicTacToe
       end
     end
 
-    # it "updates the value of the cell at (x, y) coordinate" do
-    #   Tic = Struct.new(:value)
-    #   grid = [[Tic.new("X"), "", ""], ["", "", ""], ["", "", ""]]
-    #   board = Board.new(grid: grid)
-    #   board.set_cell(0, 1, "O")
-    #   expect(board.get_cell(0, 1).value).to eq "O"
-    # end
+    Tic = Struct.new(:value)
+    let(:x) {Tic.new("X")}
+    let(:y) {Tic.new("O")}
+    let(:e) {Tic.new("")}
+
+    it "updates the value of the cell at (x, y) coordinate" do
+      grid = [
+        [x, e, e],
+        [e, e, e],
+        [e, e, e]
+      ]
+      board = Board.new(grid: grid)
+      board.set_cell(0, 1, "O")
+      expect(board.get_cell(0, 1).value).to eq "O"
+    end
 
     context "#game_over" do
       it "returns :winner if winner? is true" do
         board = Board.new
         allow(board).to receive(:winner?) {true}
-        # board.stub(:winner?) {true}
         expect(board.game_over).to eq :winner
       end
 
@@ -63,8 +70,57 @@ module TicTacToe
         allow(board).to receive(:draw?) {false}
         expect(board.game_over).to be_falsey
       end
+
+      it "returns :winner when all elements of row are the same" do
+        grid = [
+          [x, x, x],
+          [y, e, x],
+          [y, y, y]
+        ]
+        board = Board.new(grid: grid)
+        expect(board.game_over).to eq :winner
+      end
+
+      it "returns :winner when all elements of column are the same" do
+        grid = [
+          [x, y, x],
+          [x, e, x],
+          [x, y, y]
+        ]
+        board = Board.new(grid: grid)
+        expect(board.game_over).to eq :winner
+      end
+
+      it "returns :winner when all elements of diagonals are the same" do
+        grid = [
+          [y, y, x],
+          [x, y, e],
+          [x, e, y]
+        ]
+        board = Board.new(grid: grid)
+        expect(board.game_over).to eq :winner
+      end
+
+      it "returns :draw when all elements of the board are taken" do
+        grid = [
+          [x, y, x],
+          [x, y, x],
+          [y, x, y]
+        ]
+        board = Board.new(grid: grid)
+        expect(board.game_over).to eq :draw
+      end
+
+      it "returns false when there is no winner or draw" do
+        grid = [
+          [x, y, e],
+          [x, e, x],
+          [y, e, y]
+        ]
+        board = Board.new(grid: grid)
+        expect(board.game_over).to be_falsey
+      end
+
     end
-
-
   end
 end
