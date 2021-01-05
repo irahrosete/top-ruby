@@ -2,11 +2,9 @@ module TicTacToe
   class Board
 
     attr_reader :grid
-    attr_accessor :value
 
     def initialize(input = {})
       @grid = input.fetch(:grid, default_grid)
-      @value = value
     end
 
     def default_grid
