@@ -21,7 +21,7 @@ module TicTacToe
 
     def formatted_grid
       grid.each do |row|
-        puts row.map {|cell| cell.value.empty? ? "_" : cell.value}.join("")
+        puts row.map {|cell| cell.value.empty? ? "⬜" : cell.value}.join("")
       end
     end
 

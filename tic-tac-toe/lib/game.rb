@@ -42,5 +42,23 @@ module TicTacToe
       return "the game is a draw!" if board.game_over == :draw
     end
 
+    def play
+      while true
+        board.formatted_grid
+        puts solicit_move
+        x, y = get_move
+        board.set_cell(x, y, current_player.mark)
+        if board.game_over
+          system "clear"
+          puts game_over_message
+          board.formatted_grid
+          return
+        else
+          switch_players
+        end
+        system "clear"
+      end
+    end
+
   end
 end
