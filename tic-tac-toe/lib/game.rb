@@ -44,6 +44,7 @@ module TicTacToe
 
     def play
       while true
+        system "clear"
         puts "Use the numbers 1-9 to place your mark on the board."
         puts "\n"
         board.formatted_grid
@@ -53,6 +54,7 @@ module TicTacToe
         board.set_cell(x, y, current_player.mark)
         if board.game_over
           system "clear"
+          puts "Game over\n\n"
           board.formatted_grid
           puts "\n"
           puts game_over_message
@@ -60,7 +62,6 @@ module TicTacToe
         else
           switch_players
         end
-        system "clear"
       end
     end
 

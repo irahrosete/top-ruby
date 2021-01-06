@@ -4,10 +4,11 @@ require_relative "board"
 require_relative "array"
 require_relative "game"
 
+system "clear"
 puts "Welcome to tic tac toe\n\n"
-puts "Enter player1's name"
+print "Enter player 1's name: "
 p1 = gets.chomp
-puts "Enter player2's name"
+print "Enter player 2's name: "
 p2 = gets.chomp
 puts "\n"
 
