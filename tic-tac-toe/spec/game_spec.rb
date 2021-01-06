@@ -34,5 +34,26 @@ module TicTacToe
       end
     end
 
+    context "#solicit_move" do
+      it "asks the player to make a move" do
+        game = Game.new([bob, cris])
+        allow(game).to receive(:current_player) {bob}
+        expected = "bob's move."
+        expect(game.solicit_move).to eq expected
+      end
+    end
+
+    context "#get_move" do
+      it "converts human move of '1' to [0, 0]" do
+        game = Game.new([bob, cris])
+        expect(game.get_move("1")).to eq [0, 0]
+      end
+      it "converts human move of '6' to [2, 1]" do
+        game = Game.new([bob, cris])
+        expect(game.get_move("6")).to eq [2, 1]
+      end
+    end
+
+
   end
 end
