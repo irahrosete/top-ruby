@@ -37,6 +37,10 @@ module TicTacToe
       mapping[human_move]
     end
 
+    def game_over_message
+      return "#{current_player.name} won!" if board.game_over == :winner
+      return "the game is a draw!" if board.game_over == :draw
+    end
 
   end
 end
