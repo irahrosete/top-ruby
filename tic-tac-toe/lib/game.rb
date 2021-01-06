@@ -14,7 +14,7 @@ module TicTacToe
     end
 
     def solicit_move
-      "#{current_player.name}'s move."
+      "#{current_player.name}'s move. #{current_player.mark}"
     end
 
     def get_move (human_move = gets.chomp)
@@ -38,20 +38,24 @@ module TicTacToe
     end
 
     def game_over_message
-      return "#{current_player.name} won!" if board.game_over == :winner
-      return "the game is a draw!" if board.game_over == :draw
+      return "#{current_player.name} won!\n\n" if board.game_over == :winner
+      return "the game is a draw!\n\n" if board.game_over == :draw
     end
 
     def play
       while true
+        puts "Use the numbers 1-9 to place your mark on the board."
+        puts "\n"
         board.formatted_grid
+        puts ""
         puts solicit_move
         x, y = get_move
         board.set_cell(x, y, current_player.mark)
         if board.game_over
           system "clear"
-          puts game_over_message
           board.formatted_grid
+          puts "\n"
+          puts game_over_message
           return
         else
           switch_players
