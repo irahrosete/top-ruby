@@ -8,7 +8,7 @@ Projects from the Ruby Programming course of [The Odin Project](https://www.theo
 [Bubble Sort]()
 
 ## Object Oriented Programming Basics
-[Tic Tac Toe](https://github.com/irahrosete/top-ruby/tree/main/tic-tac-toe) | [repl.it preview](https://repl.it/@irahrosete/tictactoe#.replit)<br>
+[Tic Tac Toe](https://github.com/irahrosete/top-ruby/tree/main/tic-tac-toe) | [repl.it preview](https://repl.it/@irahrosete/tictactoe#README.md)<br>
 [Mastermind]()
 
 ## Files and Serialisation
